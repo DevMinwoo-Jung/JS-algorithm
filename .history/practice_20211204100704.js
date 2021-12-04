@@ -7,7 +7,7 @@
     }
     return answer;
   }
-  console.log(solution(12));
+  console.log(solution(10));
   
 
 }
