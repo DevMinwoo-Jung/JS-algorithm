@@ -35,4 +35,19 @@
 // console.log(solution(3,20,4));
   
 
+  function solution(s) {
+    let answer = s.split('');
+    let arrLength = answer.length;
+
+    if((arrLength % 2) == 0){
+      answer = `${answer[Math.floor((arrLength/2)-1)]}${answer[Math.floor((arrLength/2))]}`;
+    } else {
+      answer = `${answer[Math.floor((arrLength/2))]}`;     
+    }
+
+    return answer;
+  }
+
+  console.log(solution('abcde'));
+
 }
