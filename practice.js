@@ -35,19 +35,35 @@
 // console.log(solution(3,20,4));
   
 
-  function solution(s) {
-    let answer = s.split('');
-    let arrLength = answer.length;
+  // function solution(s) {
+  //   let answer = s.split('');
+  //   let arrLength = answer.length;
 
-    if((arrLength % 2) == 0){
-      answer = `${answer[Math.floor((arrLength/2)-1)]}${answer[Math.floor((arrLength/2))]}`;
-    } else {
-      answer = `${answer[Math.floor((arrLength/2))]}`;     
+  //   if((arrLength % 2) == 0){
+  //     answer = `${answer[Math.floor((arrLength/2)-1)]}${answer[Math.floor((arrLength/2))]}`;
+  //   } else {
+  //     answer = `${answer[Math.floor((arrLength/2))]}`;     
+  //   }
+
+  //   return answer;
+  // }
+
+  // console.log(solution('abcde'));
+
+  function solution(absolutes, signs) {
+    let answer = 0;
+    
+    for(let i=0; i<absolutes.length; i++){
+      if(signs[i] === true){
+        absolutes[i] = absolutes[i];
+      } else {
+        absolutes[i] = -absolutes[i];
+      }
     }
-
+    answer = absolutes.reduce((a,b) => a + b);
     return answer;
   }
 
-  console.log(solution('abcde'));
+  console.log(solution([4,7,12], [true,false,true]));
 
 }
