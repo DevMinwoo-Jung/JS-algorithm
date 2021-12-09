@@ -50,20 +50,47 @@
 
   // console.log(solution('abcde'));
 
-  function solution(absolutes, signs) {
-    let answer = 0;
+  // function solution(absolutes, signs) {
+  //   let answer = 0;
     
-    for(let i=0; i<absolutes.length; i++){
-      if(signs[i] === true){
-        absolutes[i] = absolutes[i];
-      } else {
-        absolutes[i] = -absolutes[i];
-      }
+  //   for(let i=0; i<absolutes.length; i++){
+  //     if(signs[i] === true){
+  //       absolutes[i] = absolutes[i];
+  //     } else {
+  //       absolutes[i] = -absolutes[i];
+  //     }
+  //   }
+  //   answer = absolutes.reduce((a,b) => a + b);
+  //   return answer;
+  // }
+
+  // console.log(solution([4,7,12], [true,false,true]));
+
+  // function solution(new_id) {
+  //   let answer = '';
+
+  //   // Step1
+  //   answer = String(new_id).toLowerCase();
+
+  //   console.log(answer);
+  //   // Step2
+  //   let regTest = /^[a-z0-9]{1,15}$/;
+  //   console.log(regTest.test('answer'));
+  //   return answer;
+  // }
+
+  // solution('ASDDD');
+
+  function solution(array, commands) {
+    let answer = [];
+    for(let i=0; i<commands.length; i++){
+//        answer[i] = array.slice(commands[i][0]-1, commands[i][1]).sort()[commands[i][2]-1];
+        answer[i] = array.slice(commands[i][0]-1, commands[i][1]).sort((a,b) => a-b)[commands[i][2]-1];
     }
-    answer = absolutes.reduce((a,b) => a + b);
+    console.log(answer);
     return answer;
   }
 
-  console.log(solution([4,7,12], [true,false,true]));
+  solution([1, 5, 2, 11, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]]);
 
 }
