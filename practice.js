@@ -81,16 +81,22 @@
 
   // solution('ASDDD');
 
-  function solution(array, commands) {
-    let answer = [];
-    for(let i=0; i<commands.length; i++){
-//        answer[i] = array.slice(commands[i][0]-1, commands[i][1]).sort()[commands[i][2]-1];
-        answer[i] = array.slice(commands[i][0]-1, commands[i][1]).sort((a,b) => a-b)[commands[i][2]-1];
-    }
-    console.log(answer);
+  // function solution(array, commands) {
+  //   let answer = [];
+  //   for(let i=0; i<commands.length; i++){
+  //       answer[i] = array.slice(commands[i][0]-1, commands[i][1]).sort((a,b) => a-b)[commands[i][2]-1];
+  //   }
+  //   return answer;
+  // }
+
+
+  function solution(a, b) {
+    var answer = new Date(2016, a-1, b);
+    answer = String(answer).slice(0,4).toUpperCase();
     return answer;
   }
 
-  solution([1, 5, 2, 11, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]]);
+  console.log(solution(5, 24));
+
 
 }
