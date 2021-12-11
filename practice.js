@@ -90,13 +90,24 @@
   // }
 
 
-  function solution(a, b) {
-    var answer = new Date(2016, a-1, b);
-    answer = String(answer).slice(0,4).toUpperCase();
+  // function solution(a, b) {
+  //   var answer = new Date(2016, a-1, b);
+  //   answer = String(answer).slice(0,4).toUpperCase();
+  //   return answer;
+  // }
+
+  // console.log(solution(5, 24));
+
+  function solution(nums) {
+    var answer = 0;
+    answer = nums.filter((element, num) => nums.indexOf(element) === num).length;
+    if(answer * 2 > nums.length){
+      answer = Math.round(nums.length / 2);
+    }
     return answer;
   }
 
-  console.log(solution(5, 24));
+  console.log(solution([3,3,3,2,2,2]));
 
 
 }
