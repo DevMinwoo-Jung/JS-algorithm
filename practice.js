@@ -109,21 +109,64 @@
 
   // console.log(solution([3,3,3,2,2,2]));
 
-  function solution(numbers) {
-    var answer = [];
-    var test = 0;
-    for(let i=0; i<numbers.length; i++){
-      for(let j=0; j<numbers.length; j++){
-        if(!(i === j)){
-          answer.push(Number(numbers[i]) + Number(numbers[j]));
-        }
+  // function solution(numbers) {
+  //   var answer = [];
+  //   for(let i=0; i<numbers.length; i++){
+  //     for(let j=0; j<numbers.length; j++){
+  //       if(!(i === j)){
+  //         answer.push(Number(numbers[i]) + Number(numbers[j]));
+  //       }
+  //     }
+  //   }
+  //   answer = answer.sort((a,b) => a-b).filter((element, num) => answer.indexOf(element) === num);
+  //   return answer;
+  // }
+  // console.log(solution([2,1,3,4,1]));
+
+//   function solution(arr)
+// {
+//     var answer = [];
+
+//     for(let i=0; i<arr.length; i++){
+//       if(arr[i] !== arr[i + 1]){
+//         answer.push(arr[i]);
+//       }
+//     }
+//     return answer;
+// }
+
+//   solution([4,4,4,3,3]);
+
+  // function solution(seoul) {
+  //   var answer = '';
+
+  //   answer = `김서방은 ${seoul.indexOf('Kim')}에 있다`;
+    
+  //   return answer;
+  // }
+
+  // console.log(solution(["Jane", "Kim"]));
+
+  function solution(s) {
+    var answer = true;
+    s = s.split("");
+    let p = 0;
+    let y = 0;
+    
+    for(let i=0; i<s.length; i++){
+      if(s[i] === "p" || s[i] === "P"){
+        p++;
+      } 
+      else if(s[i] === "y" || s[i] === "Y"){
+        y++;
       }
     }
-    answer = answer.sort((a,b) => a-b).filter((element, num) => answer.indexOf(element) === num);
+    console.log(p, y);
+    
+    p == y ? answer = true : answer = false;
 
-    console.log(answer);
     return answer;
   }
-  console.log(solution([2,1,3,4,1]));
 
+  console.log(solution("Pyy"));
 }
