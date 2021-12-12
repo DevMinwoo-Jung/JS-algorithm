@@ -98,16 +98,32 @@
 
   // console.log(solution(5, 24));
 
-  function solution(nums) {
-    var answer = 0;
-    answer = nums.filter((element, num) => nums.indexOf(element) === num).length;
-    if(answer * 2 > nums.length){
-      answer = Math.round(nums.length / 2);
+  // function solution(nums) {
+  //   var answer = 0;
+  //   answer = nums.filter((element, num) => nums.indexOf(element) === num).length;
+  //   if(answer * 2 > nums.length){
+  //     answer = Math.round(nums.length / 2);
+  //   }
+  //   return answer;
+  // }
+
+  // console.log(solution([3,3,3,2,2,2]));
+
+  function solution(numbers) {
+    var answer = [];
+    var test = 0;
+    for(let i=0; i<numbers.length; i++){
+      for(let j=0; j<numbers.length; j++){
+        if(!(i === j)){
+          answer.push(Number(numbers[i]) + Number(numbers[j]));
+        }
+      }
     }
+    answer = answer.sort((a,b) => a-b).filter((element, num) => answer.indexOf(element) === num);
+
+    console.log(answer);
     return answer;
   }
-
-  console.log(solution([3,3,3,2,2,2]));
-
+  console.log(solution([2,1,3,4,1]));
 
 }
