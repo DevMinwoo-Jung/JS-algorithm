@@ -147,26 +147,40 @@
 
   // console.log(solution(["Jane", "Kim"]));
 
+  // function solution(s) {
+  //   var answer = true;
+  //   s = s.split("");
+  //   let p = 0;
+  //   let y = 0;
+    
+  //   for(let i=0; i<s.length; i++){
+  //     if(s[i] === "p" || s[i] === "P"){
+  //       p++;
+  //     } 
+  //     else if(s[i] === "y" || s[i] === "Y"){
+  //       y++;
+  //     }
+  //   }
+    
+  //   p == y ? answer = true : answer = false;
+
+  //   return answer;
+  // }
+
+  // console.log(solution("Pyy"));
+
   function solution(s) {
-    var answer = true;
-    s = s.split("");
-    let p = 0;
-    let y = 0;
-    
-    for(let i=0; i<s.length; i++){
-      if(s[i] === "p" || s[i] === "P"){
-        p++;
-      } 
-      else if(s[i] === "y" || s[i] === "Y"){
-        y++;
-      }
+    console.log(s.length);
+    var answer = s.split("");
+    if((answer.length > 9) || (answer.length < 2)){
+      return answer = false;
     }
-    console.log(p, y);
-    
-    p == y ? answer = true : answer = false;
+
+    answer = answer.map(s => s).every(s => Number(s) == s);
 
     return answer;
+
   }
 
-  console.log(solution("Pyy"));
+  console.log(solution("123456"))
 }
