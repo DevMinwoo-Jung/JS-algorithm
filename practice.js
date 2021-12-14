@@ -169,18 +169,32 @@
 
   // console.log(solution("Pyy"));
 
-  function solution(s) {
-    console.log(s.length);
-    var answer = s.split("");
-    if((answer.length > 9) || (answer.length < 2)){
-      return answer = false;
-    }
+  // function solution(s) {
 
-    answer = answer.map(s => s).every(s => Number(s) == s);
+  //   var answer = s.split("");
+  //   if((s.length > 9) || (s.length < 2)){
+  //     return answer = false;
+  //   } else if (!(s.length === 4) || (s.length === 6)){
+  //     return answer = false;
+  //   }
 
+
+  //   answer = answer.map(s => s).every(s => Number(s) == s);
+
+  //   return answer;
+
+  // }
+
+  // console.log(solution("123456"))
+
+  function solution(arr, divisor) {
+    var answer = [];
+    answer = arr.filter(arr => arr % divisor === 0).sort((a,b) => a -b);
+
+
+    answer == '' ? answer[0] = -1 : answer; 
     return answer;
-
   }
 
-  console.log(solution("123456"))
+  console.log(solution([5,10,12], 5));
 }
