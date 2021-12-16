@@ -249,77 +249,67 @@
   //   return answer;
   // }
 
-  function solution(answers) {
-    var answer = [0,0,0];
+  // function solution(answers) {
+  //   var answer = [0,0,0];
 
-    let jjikGod = [[1,2,3,4,5],[2,1,2,3,2,4,2,5],[3,3,1,1,2,2,4,4,5,5]];
+  //   let jjikGod = [[1,2,3,4,5],[2,1,2,3,2,4,2,5],[3,3,1,1,2,2,4,4,5,5]];
 
-    jjikGod[0] = Array(2000).fill([1,2,3,4,5]).flat();
-    jjikGod[1] = Array(1250).fill([2,1,2,3,2,4,2,5]).flat();
-    jjikGod[2] = Array(1000).fill([3,3,1,1,2,2,4,4,5,5]).flat();
+  //   jjikGod[0] = Array(2000).fill([1,2,3,4,5]).flat();
+  //   jjikGod[1] = Array(1250).fill([2,1,2,3,2,4,2,5]).flat();
+  //   jjikGod[2] = Array(1000).fill([3,3,1,1,2,2,4,4,5,5]).flat();
     
-    for(let i=0; i<answers.length; i++){
-      if(answers[i] === jjikGod[0][i]){
-        answer[0] = ++answer[0];
-      }
-      if(answers[i] === jjikGod[1][i]){
-        answer[1] = ++answer[1];
-      }
-      if(answers[i] === jjikGod[2][i]){
-        answer[2] = ++answer[2];
-      }
-    }
+  //   for(let i=0; i<answers.length; i++){
+  //     if(answers[i] === jjikGod[0][i]){
+  //       answer[0] = ++answer[0];
+  //     }
+  //     if(answers[i] === jjikGod[1][i]){
+  //       answer[1] = ++answer[1];
+  //     }
+  //     if(answers[i] === jjikGod[2][i]){
+  //       answer[2] = ++answer[2];
+  //     }
+  //   }
 
-    let trueArr = answer;
-    // console.log(answer);
-    trueArr = answer.map(element => element === Math.max(...answer));
-    let trueCount = 0;
+  //   let trueArr = answer;
+  //   // console.log(answer);
+  //   trueArr = answer.map(element => element === Math.max(...answer));
+  //   let trueCount = 0;
 
-    for(let i=0; i<3; i++){
-      if(trueArr[i] === true){
-        trueCount+= 1;
-      }
-    }
-    console.log(trueCount);
+  //   for(let i=0; i<3; i++){
+  //     if(trueArr[i] === true){
+  //       trueCount+= 1;
+  //     }
+  //   }
+  //   console.log(trueCount);
 
-    if(trueCount === 0){
-      answer = [1,2,3];
-    } 
-    else if(trueCount === 1){
-      for(let i=0; i<3; i++){
-        if(trueArr[i] === true){
-          answer[i] = i+1;
-        } else {
-          answer[i] = -1;
-        }
-      }
-      answer = [answer.sort((a,b) => b-a)[0]]; 
-    } 
-    else if(trueCount > 1){
-      for(let i=0; i<3; i++){
-        if(trueArr[i] === true){
-          answer[i] = i+1;
-        } else {
-          answer[i] = -1;
-        }
-      }
-      answer = answer.filter(answer => answer !== - 1);
-    }
+  //   if(trueCount === 0){
+  //     answer = [1,2,3];
+  //   } 
+  //   else if(trueCount === 1){
+  //     for(let i=0; i<3; i++){
+  //       if(trueArr[i] === true){
+  //         answer[i] = i+1;
+  //       } else {
+  //         answer[i] = -1;
+  //       }
+  //     }
+  //     answer = [answer.sort((a,b) => b-a)[0]]; 
+  //   } 
+  //   else if(trueCount > 1){
+  //     for(let i=0; i<3; i++){
+  //       if(trueArr[i] === true){
+  //         answer[i] = i+1;
+  //       } else {
+  //         answer[i] = -1;
+  //       }
+  //     }
+  //     answer = answer.filter(answer => answer !== - 1);
+  //   }
 
-    console.log(answer);
+  //   console.log(answer);
 
-    return answer;
-  }
+  //   return answer;
+  // }
 
-  // solution([0])
-  // solution([1,2,3,4,5]);
-  solution([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
-  // solution([1,3,2,4,2]);
-  // solution([1,1,2]);
-  solution([1,2,3,4,5]);
-  solution([1,3,2,4,2]);
 
-  // jjikGod[0] = Array(2000).fill([1,2,3,4,5]).flat();
-  // jjikGod[1] = Array(1250).fill([2,1,2,3,2,4,2,5]).flat();
-  // jjikGod[2] = Array(1000).fill([3,3,1,1,2,2,4,4,5,5]).flat();
 }
