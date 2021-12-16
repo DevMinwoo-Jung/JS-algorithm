@@ -286,17 +286,24 @@
       answer = [1,2,3];
     } 
     else if(trueCount === 1){
-      answer = answer.sort((a,b) => a-b)[0]; 
+      for(let i=0; i<3; i++){
+        if(trueArr[i] === true){
+          answer[i] = i+1;
+        } else {
+          answer[i] = -1;
+        }
+      }
+      answer = [answer.sort((a,b) => b-a)[0]]; 
     } 
     else if(trueCount > 1){
       for(let i=0; i<3; i++){
-        console.log(answer[i])
-        if(answer[i] === true){
+        if(trueArr[i] === true){
           answer[i] = i+1;
         } else {
-          answer[i] = '';
+          answer[i] = -1;
         }
       }
+      answer = answer.filter(answer => answer !== - 1);
     }
 
     console.log(answer);
@@ -309,8 +316,8 @@
   solution([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
   // solution([1,3,2,4,2]);
   // solution([1,1,2]);
-  // solution([1,2,3,4,5]);
-  // solution([1,3,2,4,2]);
+  solution([1,2,3,4,5]);
+  solution([1,3,2,4,2]);
 
   // jjikGod[0] = Array(2000).fill([1,2,3,4,5]).flat();
   // jjikGod[1] = Array(1250).fill([2,1,2,3,2,4,2,5]).flat();
