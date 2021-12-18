@@ -47,9 +47,13 @@
   function solution(num){
     let answer = 0;
 
-    for(let i=2; i<=num; i++){
+    if(num < 2 || num > 1000000){
+      return;
+    }
+
+    for(let i=3; i<=num; i = i + 2){
       let sosu = 0;
-      for(let j=2; j<=i; j++){
+      for(let j=3; j<=num; j = j + 2){
         if(i % j === 0){
           sosu++;
         }
@@ -57,9 +61,11 @@
       if(sosu === 1){
         answer++;
       }
+      sosu = 0;
     }
-    console.log(answer);
+    return answer;
   }
 
   solution(5);
 }
+
