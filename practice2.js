@@ -44,28 +44,40 @@
 
   // solution([3, 2, 4, 5, 8, 7], [31, 10, 45, 1, 6, 19]);
 
-  function solution(num){
-    let answer = 0;
+  // function solution(num){
+  //   let answer = 1;
 
-    if(num < 2 || num > 1000000){
-      return;
-    }
+  //   if(num < 2 || num > 1000000){
+  //     return;
+  //   }
 
-    for(let i=3; i<=num; i = i + 2){
-      let sosu = 0;
-      for(let j=3; j<=num; j = j + 2){
-        if(i % j === 0){
-          sosu++;
-        }
-      }
-      if(sosu === 1){
-        answer++;
-      }
-      sosu = 0;
-    }
+  //   for(let i=3; i<=num; i = i + 2){
+  //     let sosu = 0;
+  //     for(let j=3; j<=num; j = j + 2){
+  //       if(i % j === 0){
+  //         sosu++;
+  //       }
+  //     }
+  //     if(sosu === 1){
+  //       answer++;
+  //     }
+  //     sosu = 0;
+  //   }
+  //   return answer;
+  // }
+
+  // solution(5);
+
+  function solution(n)
+{
+    var answer = 0;
+
+    answer = n.toString().split("").map(n => Number(n)).reduce((a,b) => a + b ,0);
+    console.log(answer);
+
     return answer;
-  }
+}
 
-  solution(5);
+solution(123);
 }
 
