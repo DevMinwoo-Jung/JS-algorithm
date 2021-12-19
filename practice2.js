@@ -68,16 +68,32 @@
 
   // solution(5);
 
-  function solution(n)
-{
-    var answer = 0;
+//   function solution(n)
+// {
+//     var answer = 0;
 
-    answer = n.toString().split("").map(n => Number(n)).reduce((a,b) => a + b ,0);
-    console.log(answer);
+//     answer = n.toString().split("").map(n => Number(n)).reduce((a,b) => a + b ,0);
 
-    return answer;
+//     return answer;
+// }
+
+// solution(123);
+
+function solution(s) {
+  var answer = '';
+  answer = s.split("").sort(function (a, b) {
+    if (a > b) {
+        return -1;
+    }
+    if (b > a) {
+        return 1;
+    }
+    return 0;
+}).join('')
+  return answer;
+
 }
 
-solution(123);
+  console.log(solution("Zbcdefg"));
 }
 
