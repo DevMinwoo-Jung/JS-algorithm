@@ -79,21 +79,56 @@
 
 // solution(123);
 
-function solution(s) {
-  var answer = '';
-  answer = s.split("").sort(function (a, b) {
-    if (a > b) {
-        return -1;
-    }
-    if (b > a) {
-        return 1;
-    }
-    return 0;
-}).join('')
-  return answer;
+// function solution(s) {
+//   var answer = '';
+//   answer = s.split("").sort(function (a, b) {
+//     if (a > b) {
+//         return -1;
+//     }
+//     if (b > a) {
+//         return 1;
+//     }
+//     return 0;
+// }).join('')
+//   return answer;
 
+// }
+
+//   console.log(solution("Zbcdefg"));
+
+
+// function solution(n) {
+//   var answer = 0;
+//   answer = Math.sqrt(n);
+
+//   if(n % answer !== 0){
+//     answer = -1;
+//   } else {
+//     answer = Math.pow(answer+1,2);
+//   }
+//   return answer;
+//   }
+
+//   console.log(solution(121));
+
+function solution(arr) {
+  var answer = [];
+  if(arr.length < 2){
+
+    return arr = [-1];
+  }
+  let min = 0;
+  min = Math.min(...arr);
+
+  console.log(arr.findIndex(element => element === min));
+
+  answer = arr.splice(arr.findIndex(element => element === min), 1);
+
+  console.log(min);
+  answer = arr;
+  return answer;
 }
 
-  console.log(solution("Zbcdefg"));
+console.log(solution([4,3,2,1]));
 }
 
