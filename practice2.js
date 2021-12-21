@@ -111,24 +111,27 @@
 
 //   console.log(solution(121));
 
-function solution(arr) {
-  var answer = [];
-  if(arr.length < 2){
+// function solution(arr) {
+//   var answer = [];
+//   if(arr.length < 2){
 
-    return arr = [-1];
-  }
-  let min = 0;
-  min = Math.min(...arr);
+//     return arr = [-1];
+//   }
+//   let min = 0;
+//   min = Math.min(...arr);
+//   answer = arr.splice(arr.findIndex(element => element === min), 1);
+//   answer = arr;
+//   return answer;
+// }
 
-  console.log(arr.findIndex(element => element === min));
+// console.log(solution([4,3,2,1]));
 
-  answer = arr.splice(arr.findIndex(element => element === min), 1);
-
-  console.log(min);
-  answer = arr;
+function solution(n) {
+  var answer = 0;
+  answer = n.toString().split("").sort((a,b) => b-a).join('') * 1;
   return answer;
-}
+  }
 
-console.log(solution([4,3,2,1]));
+  console.log(solution(118372));
 }
 
