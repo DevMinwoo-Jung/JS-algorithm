@@ -126,12 +126,28 @@
 
 // console.log(solution([4,3,2,1]));
 
-function solution(n) {
-  var answer = 0;
-  answer = n.toString().split("").sort((a,b) => b-a).join('') * 1;
-  return answer;
-  }
+// function solution(n) {
+//   var answer = 0;
+//   answer = n.toString().split("").sort((a,b) => b-a).join('') * 1;
+//   return answer;
+//   }
 
-  console.log(solution(118372));
+//   console.log(solution(118372));
+
+// function solution(num) {
+//   var answer = '';
+//   if(num % 2 === 0){
+//     answer = 'Even';
+//   } else {
+//     answer = 'Odd';
+//   }
+//   return answer;
+// }
+
+function solution(n) {
+  var answer = [];
+  answer = n.toString().split("").map(n => n * 1).reverse();
+  return answer;
+}
 }
 
