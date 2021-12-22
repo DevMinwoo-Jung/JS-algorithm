@@ -144,10 +144,103 @@
 //   return answer;
 // }
 
-function solution(n) {
-  var answer = [];
-  answer = n.toString().split("").map(n => n * 1).reverse();
+// function solution(n) {
+//   var answer = [];
+//   answer = n.toString().split("").map(n => n * 1).reverse();
+//   return answer;
+// }
+
+function solution(s) {
+  var answer = 0;
+  const nums2 = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+  let searchStr = [];
+  let stringToNums = [];
+  let tempStr = s;
+
+  for(let i=0; i<nums2.length; i++){
+    if(s.search(nums2[i]) !== -1){
+      console.log(s.search(nums2[i]));
+      searchStr.push(nums2[i]);
+      let searchIndex = s.search(nums2[i]);
+      s = s.split('');
+      console.log(searchIndex, nums2[i].length);
+      s.splice(searchIndex, nums2[i].length);
+      s = s.join('');
+    }
+  }
+  console.log(searchStr);
+  // let i = 0;
+  // console.log(isNaN(s[0]))
+  // while(isNaN((tempStr[i] * 1) === false)){
+    
+  //   i++;
+  // }
+  // console.log(searchIndex);
+
+  // console.log(isNaN((s[0] * 1)));
+  // console.log(s[0] * 1);
+//  console.log(s.join(''));
+  
+
+
+  if(searchStr.length === 0){
+    return answer = Number(s);
+  }
+
+  for(let i=0; i<searchStr.length; i++){
+    if(searchStr[i] === 'zero'){
+      stringToNums.push(0);
+    }
+    if(searchStr[i] === 'one'){
+      stringToNums.push(1);
+    }
+    if(searchStr[i] === 'two'){
+      stringToNums.push(2);
+    }
+    if(searchStr[i] === 'three'){
+      stringToNums.push(3);
+    }
+    if(searchStr[i] === 'four'){
+      stringToNums.push(4);
+    }
+    if(searchStr[i] === 'five'){
+      stringToNums.push(5);
+    }
+    if(searchStr[i] === 'six'){
+      stringToNums.push(6);
+    }
+    if(searchStr[i] === 'seven'){
+      stringToNums.push(7);
+    }
+    if(searchStr[i] === 'eight'){
+      stringToNums.push(8);
+    }
+    if(searchStr[i] === 'nine'){
+      stringToNums.push(9);
+    }
+  }
+  // console.log("searchStr");
+  // console.log(searchStr);
+  // console.log("searchIndex");
+  // console.log(searchIndex);
+  // console.log("stringToNums");
+  // console.log(stringToNums);
+
+
+  for(let i=0; i<searchStr.length; i++){
+    let tempSearch = s.search(searchStr[i]);
+    s = s.split("");
+    s.splice(tempSearch, searchStr[i].length, stringToNums[i]);
+    s = s.join("");
+  }
+  answer = Number(s);
+  
+
   return answer;
-}
+  }
+
+  
+  console.log(solution("1zerotwozero3"));
+  // console.log(solution("one4seveneight"));
 }
 
