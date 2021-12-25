@@ -150,52 +150,70 @@
 //   return answer;
 // }
 
-function solution(n, arr1, arr2) {
+// function solution(n, arr1, arr2) {
+//   var answer = [];
+//   let tempAnswer = [];
+
+//   if(n > 16 || n < 0){
+//     return;
+//   }
+
+//   for(let i=0; i<arr1.length; i++){
+//     if((n - arr1[i].toString(2).length) !== 0){
+//       let zero = "0".repeat(n - arr1[i].toString(2).length);
+//       tempAnswer.push(zero + arr1[i].toString(2));
+//     } else {
+//       tempAnswer.push(arr1[i].toString(2));
+//     }
+//   }
+//   for(let i=0; i<arr1.length; i++){
+//     if((n - arr2[i].toString(2).length) !== 0){
+//       let zero = "0".repeat(n - arr2[i].toString(2).length);
+//       tempAnswer.push(zero + arr2[i].toString(2));
+//     } else {
+//       tempAnswer.push(arr2[i].toString(2));
+//     }
+//   }
+  
+//   for(let i=0; i<arr1.length; i++){
+//     if((n - (tempAnswer[i] * 1 + tempAnswer[i + arr2.length] * 1).toString().length) !== 0){
+//       let zero = "0".repeat(n - (tempAnswer[i] * 1 + tempAnswer[i + arr2.length] * 1).toString().length);
+//       answer.push(zero + (tempAnswer[i] * 1 + tempAnswer[i + arr2.length] * 1))
+//     } else {
+//       answer.push(tempAnswer[i] * 1 + tempAnswer[i + arr2.length] * 1);
+//     }
+//   }
+  
+//   for(let i=0; i<answer.length; i++){
+//     answer[i] = answer[i].toString().split("");
+//     console.log(answer[i]);
+//     for(let j=0; j<answer.length; j++){
+//       answer[i][j] !== "0" ? answer[i][j] = "#" : answer[i][j] = ' ';
+//     }
+//     answer[i] = answer[i].join('');
+//   }
+
+//   return answer;
+// }
+
+// solution(6, [46, 33, 33 ,22, 31, 50], [27 ,56, 19, 14, 14, 10]);
+
+function solution(s) {
   var answer = [];
-  let tempAnswer = [];
+  var realAnswer = []
+  answer = s.split(" ").map(str => str.split(""));
 
-  if(n > 16 || n < 0){
-    return;
-  }
-
-  for(let i=0; i<arr1.length; i++){
-    if((n - arr1[i].toString(2).length) !== 0){
-      let zero = "0".repeat(n - arr1[i].toString(2).length);
-      tempAnswer.push(zero + arr1[i].toString(2));
-    } else {
-      tempAnswer.push(arr1[i].toString(2));
-    }
-  }
-  for(let i=0; i<arr1.length; i++){
-    if((n - arr2[i].toString(2).length) !== 0){
-      let zero = "0".repeat(n - arr2[i].toString(2).length);
-      tempAnswer.push(zero + arr2[i].toString(2));
-    } else {
-      tempAnswer.push(arr2[i].toString(2));
-    }
-  }
-  
-  for(let i=0; i<arr1.length; i++){
-    if((n - (tempAnswer[i] * 1 + tempAnswer[i + arr2.length] * 1).toString().length) !== 0){
-      let zero = "0".repeat(n - (tempAnswer[i] * 1 + tempAnswer[i + arr2.length] * 1).toString().length);
-      answer.push(zero + (tempAnswer[i] * 1 + tempAnswer[i + arr2.length] * 1))
-    } else {
-      answer.push(tempAnswer[i] * 1 + tempAnswer[i + arr2.length] * 1);
-    }
-  }
-  
   for(let i=0; i<answer.length; i++){
-    answer[i] = answer[i].toString().split("");
-    console.log(answer[i]);
-    for(let j=0; j<answer.length; j++){
-      answer[i][j] !== "0" ? answer[i][j] = "#" : answer[i][j] = ' ';
+    for(let j=0; j<answer[i].length; j++){
+      [j] % 2 == 0 ? answer[i][j] = answer[i][j].toUpperCase() :  answer[i][j] = answer[i][j].toLowerCase();
     }
     answer[i] = answer[i].join('');
   }
-
+  answer = answer.join(' ')
+  console.log(answer);
   return answer;
 }
 
-solution(6, [46, 33, 33 ,22, 31, 50], [27 ,56, 19, 14, 14, 10]);
+solution("try hello world");
 }
 
