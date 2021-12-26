@@ -198,22 +198,59 @@
 
 // solution(6, [46, 33, 33 ,22, 31, 50], [27 ,56, 19, 14, 14, 10]);
 
-function solution(s) {
-  var answer = [];
-  var realAnswer = []
-  answer = s.split(" ").map(str => str.split(""));
+// function solution(s) {
+//   var answer = [];
+//   answer = s.split(" ").map(str => str.split(""));
 
-  for(let i=0; i<answer.length; i++){
-    for(let j=0; j<answer[i].length; j++){
-      [j] % 2 == 0 ? answer[i][j] = answer[i][j].toUpperCase() :  answer[i][j] = answer[i][j].toLowerCase();
-    }
-    answer[i] = answer[i].join('');
-  }
-  answer = answer.join(' ')
-  console.log(answer);
-  return answer;
-}
+//   for(let i=0; i<answer.length; i++){
+//     for(let j=0; j<answer[i].length; j++){
+//       [j] % 2 == 0 ? answer[i][j] = answer[i][j].toUpperCase() :  answer[i][j] = answer[i][j].toLowerCase();
+//     }
+//     answer[i] = answer[i].join('');
+//   }
+//   answer = answer.join(' ');
+//   return answer;
+// }
 
-solution("try hello world");
+// solution("try hello world");
+
+// function solution(n) {
+//   var answer = [];
+
+//   if(n < 0 || n > 3000){
+//     return;
+//   }
+
+//   for(let i=n; i>0; i--){
+//     if(n % i === 0){
+//       answer.push(i);
+//     }
+//   }
+
+//   answer = answer.reduce((a,b) => a + b,0);
+
+//   return answer;
+//   }
+
+//   solution(0);
+
+// function solution(arr1, arr2) {
+//   var answer = [[],[]];
+//   for(let i=0; i<arr1[0].length; i++){
+//     if(!isNaN(arr1[0][i] + arr2[0][i])){
+//       answer[0].push(arr1[0][i] + arr2[0][i]);
+//     }
+//   }
+//   for(let i=0; i<arr1[0].length; i++){
+//     if(!isNaN(arr1[0][i] + arr2[0][i])){
+//       answer[1].push(arr1[1][i] + arr2[1][i]);
+//     }
+//   }
+//   return answer;
+// }
+
+// solution([[1,2,4],[2,3,6]],[[3,4,2],[5,6,1]]);
+// solution([[1],[2]],[[3],[4]]);
+// // 	[[4,6],[7,9]]
 }
 
