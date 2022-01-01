@@ -253,59 +253,55 @@
 // solution([[1],[2]],[[3],[4]]);
 // // 	[[4,6],[7,9]]
 
-  function solution(arr, num){
+  // function solution(strings, n) {
+  //   var answer = [];
 
-    if(arr.map(arr => arr !== arr.toLowerCase())){
-      arr = arr = arr.sort((a, b) => {
-        if(a[num] > b[num]){
-          return 1;
-        } else if ( a[num] < b[num]){
-          return -1;
-        } else if (a[num] === b[num]){
-          return a.slice(num) > b.slice(num) ? 1 : -1;
-        }
-    })
-    } else {
-      return;
-    }
-
-
-    return arr;
-  }
-  function solution(strings, n) {
-    var answer = [];
-
-      answer = strings = strings.sort((a, b) => {
-        if(a[n] > b[n]){
-          return 1;
-        } else if ( a[n] < b[n]){
-          return -1;
-        } else if (a[n] === b[n]){
-          if(a.slice(n) > b.slice(n)){
-            return 1;
-          } else if(a.slice(n) < b.slice(n)){
-            return -1;
-          } else {
-            return 0;
-          }
-        }
-    }).sort((a,b) => {
-      if(a > b){
-        return 1;
-      } else if(a < b){
-        return -1;
-      } else {
-        return 0;
-      }
-    })
-    console.log(answer);
-    return answer;
-    }
+  //     answer = strings = strings.sort((a, b) => {
+  //       if(a[n] > b[n]){
+  //         return 1;
+  //       } else if ( a[n] < b[n]){
+  //         return -1;
+  //       } else {
+  //         if(a > b){
+  //           return 1;
+  //         } else if(a < b){
+  //           return -1;
+  //         } else {
+  //           return 0;
+  //         }
+  //       }
+  //   })
+  //   console.log(answer);
+  //   return answer;
+  //   }
     
-    // ["abcd", "abce", "cdx"]
-    solution(["abce", "abcd", "cdx"],2);
+  //   // ["abcd", "abce", "cdx"]
+  //   solution(["abce", "abcd", "cdx"],2);
     // solution(["sun", "bed", "car"],1);
+    function solution(numbers) {
+      var answer = [];
+
+      numbers = numbers.toString().split(",");
+      console.log(numbers);
+
+    //   answer = numbers.sort((a, b) => {
+    //     if(a[0] > b[0]){
+    //       return -1;
+    //     } else if ( a[0] < b[0]){
+    //       return 1;
+    //     } else {
+    //       if(a[0] > b[0]){
+    //         return -1;
+    //       } else if(a[0] < b[0]){
+    //         return 1;
+    //       } else {
+    //         return 0;
+    //       }
+    //     }
+    // })
+
 
 }    
+}
 
 
