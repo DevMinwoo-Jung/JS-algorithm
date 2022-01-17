@@ -278,30 +278,53 @@
   //   // ["abcd", "abce", "cdx"]
   //   solution(["abce", "abcd", "cdx"],2);
     // solution(["sun", "bed", "car"],1);
-    function solution(numbers) {
-      var answer = [];
-
-      numbers = numbers.toString().split(",");
-      console.log(numbers);
-
-    //   answer = numbers.sort((a, b) => {
-    //     if(a[0] > b[0]){
-    //       return -1;
-    //     } else if ( a[0] < b[0]){
-    //       return 1;
-    //     } else {
-    //       if(a[0] > b[0]){
-    //         return -1;
-    //       } else if(a[0] < b[0]){
-    //         return 1;
-    //       } else {
-    //         return 0;
-    //       }
-    //     }
-    // })
 
 
-}    
+    function solution(s, n) {
+      var answer = '';
+      var realAnswer = '';
+      answer = s.split("");
+      for(let i=0; i<answer.length; i++){
+          if(answer[i].charCodeAt() ==  32){
+            console.log(answer[i].charCodeAt())
+            answer[i] = '';
+          } 
+          if(answer[i].charCodeAt() + n > 122){
+            // console.log(String.fromCharCode(96 + s[i].charCodeAt() + n - 122));
+            answer[i] = String.fromCharCode(96 + (s[i].charCodeAt() + n - 122));
+          } 
+          if(answer[i].charCodeAt() + n > 90){
+            answer[i] = String.fromCharCode(64 + (s[i].charCodeAt() + n - 90));
+          }
+          if(answer[i].charCodeAt() + n < 91 & answer[i].charCodeAt() + n < 123){
+            answer[i] = String.fromCharCode(s[i].charCodeAt() + n); 
+          }
+          // console.log(answer[i]);
+        }
+        console.log(answer);
+        for(let i=0; i<answer.length; i++){
+          if(answer[i] == ''){
+            realAnswer = realAnswer + ' ';
+          } else {
+            realAnswer = realAnswer + answer[i].toString();
+          }
+        }
+
+  // console.log(' '.charCodeAt());
+  console.log(realAnswer);
+  // console.log('Z'.charCodeAt());
+  // console.log('A'.charCodeAt());
+  // console.log('z'.charCodeAt());
+  // console.log('a'.charCodeAt());
+  // console.log('Z'.charCodeAt());
+  
+
+
+  return answer;
+}
+
+  solution("a B z",3);
+  solution("AB",1);
 }
 
 
