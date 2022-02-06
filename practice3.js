@@ -1,24 +1,77 @@
 {
-function solution(s) {
-  var answer = [];
-  s = s.split(' ').map(ele =>  ele[0].toUpperCase() + ele.toLowerCase().split("").splice(1).join(''));
+//   function solution(s){
+//     var answer = true;
+//     let left = 0;
+//     let right = 0;
+
+//     console.log(s);
+//     let copy = [...s];
+//     console.log(copy);
+
+//     if(s[0] !== "(" || s[s.length -1] !== ")"){
+//       return answer = false;
+//     }
+
+//     for(let i=0; i<s.length; i++){
+//       if(s[i] === "("){
+//         left++;
+//       } else if(s[i] === ")"){
+//         right++;
+//       }
+//     }
 
 
+//     answer = left == right ? answer = true : answer = false;
+//     return answer;
+// }
 
-  for (let i = 0; i < s.length; i++) {
-    if (i == s.length - 1) {
-      answer.push(s[i]);
+// function solution(s){
+//   var answer = true;
+//   s = s.split("");
+//   answer = s[0] === ")" || s[s.length -1] === "(" ? answer = false : answer = true;
+
+//   for(let i=0; i<s.length; i++){
+//     if(s[i] === "(" & s[i+1] === ")"){
+//       s.splice(i,2);
+//       i = 0;
+//     } 
+//   }
+
+//   console.log(s);
+
+//   answer = s[0] === ")" || s[s.length -1] === "(" ? answer = false : answer = true;
+
+//   return answer;
+// }
+
+
+// console.log(solution("()()")); // true
+// console.log(solution("()))((()")); // false
+// // console.log(solution(")()(")); // false
+// // console.log(solution("())()(()")); // false
+
+function example(input){
+  let frequentNum = [...input];
+  let checkNum = {};
+  
+  // frequentNum.map((element) => frequentNum.filter((element) => checkNum.includes(element) === false ? checkNum))
+  // console.log(frequentNum.map((element) => checkNum.includs(element)));
+
+  for(let i=0; i<input.length; i++){
+    if(frequentNum[i] in checkNum){
+      console.log(frequentNum[i]);
+      checkNum[frequentNum[i]] = '시발';
+      console.log(checkNum[frequentNum[i]]);
     } else {
-      answer.push(s[i] + " ");
+      //checkNum.frequentNum[i] = 0;
+      Object.defineProperty(checkNum, `${frequentNum[i]}`, {
+        value: 1
+      })
     }
   }
-  answer = answer.join("").toString();
-  console.log(answer);
-  return answer;
-  
+console.log(checkNum);
+
 }
 
-
-solution("3people unFollowed me");
-
+example([1, 2, 2, 2, 3]);
 }
