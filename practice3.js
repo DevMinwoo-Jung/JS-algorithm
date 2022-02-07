@@ -1,77 +1,86 @@
 {
-//   function solution(s){
-//     var answer = true;
-//     let left = 0;
-//     let right = 0;
+  //   function solution(s){
+  //     var answer = true;
+  //     let left = 0;
+  //     let right = 0;
 
-//     console.log(s);
-//     let copy = [...s];
-//     console.log(copy);
+  //     console.log(s);
+  //     let copy = [...s];
+  //     console.log(copy);
 
-//     if(s[0] !== "(" || s[s.length -1] !== ")"){
-//       return answer = false;
-//     }
+  //     if(s[0] !== "(" || s[s.length -1] !== ")"){
+  //       return answer = false;
+  //     }
 
-//     for(let i=0; i<s.length; i++){
-//       if(s[i] === "("){
-//         left++;
-//       } else if(s[i] === ")"){
-//         right++;
-//       }
-//     }
+  //     for(let i=0; i<s.length; i++){
+  //       if(s[i] === "("){
+  //         left++;
+  //       } else if(s[i] === ")"){
+  //         right++;
+  //       }
+  //     }
 
+  //     answer = left == right ? answer = true : answer = false;
+  //     return answer;
+  // }
 
-//     answer = left == right ? answer = true : answer = false;
-//     return answer;
-// }
+  // function solution(s){
+  //   var answer = true;
+  //   s = s.split("");
+  //   answer = s[0] === ")" || s[s.length -1] === "(" ? answer = false : answer = true;
 
-// function solution(s){
-//   var answer = true;
-//   s = s.split("");
-//   answer = s[0] === ")" || s[s.length -1] === "(" ? answer = false : answer = true;
+  //   for(let i=0; i<s.length; i++){
+  //     if(s[i] === "(" & s[i+1] === ")"){
+  //       s.splice(i,2);
+  //       i = 0;
+  //     }
+  //   }
 
-//   for(let i=0; i<s.length; i++){
-//     if(s[i] === "(" & s[i+1] === ")"){
-//       s.splice(i,2);
-//       i = 0;
-//     } 
-//   }
+  //   console.log(s);
 
-//   console.log(s);
+  //   answer = s[0] === ")" || s[s.length -1] === "(" ? answer = false : answer = true;
 
-//   answer = s[0] === ")" || s[s.length -1] === "(" ? answer = false : answer = true;
+  //   return answer;
+  // }
 
-//   return answer;
-// }
+  // console.log(solution("()()")); // true
+  // console.log(solution("()))((()")); // false
+  // // console.log(solution(")()(")); // false
+  // // console.log(solution("())()(()")); // false
 
+  function example(input) {
+    let frequentNum = [...input];
+    let checkNum = {};
+    let answer = [];
+    let answer2 = [];
+    let checkMaxNum = 0;
 
-// console.log(solution("()()")); // true
-// console.log(solution("()))((()")); // false
-// // console.log(solution(")()(")); // false
-// // console.log(solution("())()(()")); // false
+    Object.defineProperties(Array.prototype, {
+      count: {
+          value: function(value) {
+              return this.filter(x => x==value).length;
+          }
+      }
+  });
 
-function example(input){
-  let frequentNum = [...input];
-  let checkNum = {};
-  
-  // frequentNum.map((element) => frequentNum.filter((element) => checkNum.includes(element) === false ? checkNum))
-  // console.log(frequentNum.map((element) => checkNum.includs(element)));
-
-  for(let i=0; i<input.length; i++){
-    if(frequentNum[i] in checkNum){
-      console.log(frequentNum[i]);
-      checkNum[frequentNum[i]] = '시발';
-      console.log(checkNum[frequentNum[i]]);
-    } else {
-      //checkNum.frequentNum[i] = 0;
-      Object.defineProperty(checkNum, `${frequentNum[i]}`, {
-        value: 1
-      })
+    let key = [...new Set(frequentNum)];
+    
+    for(let i=0; i<3; i++){
+      console.log(`${key[i]}'s count === ${frequentNum.count(key[i])}`);
+      checkNum[`${key[i]}`] = frequentNum.count(key[i]);
     }
+    console.log(checkNum);
+
+    answer = Object.keys(checkNum).map(num => checkNum[num]).sort((a,b) => b-a);
+    console.log(answer);
+    // 이건 최대 많이 나온 숫자가 몇 번 등장했는지 알려주는 것
+
+    checkMaxNum = Math.max(...frequentNum);
+    console.log(checkMaxNum);
+    answer2 = Object.keys(checkNum).filter(num => checkNum[num] === checkMaxNum);
+    console.log(answer2);
+    // 가장 많이 등장한 숫자
   }
-console.log(checkNum);
 
-}
-
-example([1, 2, 2, 2, 3]);
+  example([1, 2, 2, 2, 4,4,4]);
 }
