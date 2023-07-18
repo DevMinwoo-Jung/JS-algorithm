@@ -120,10 +120,9 @@
     }
     answer = answer.reduce((a, b) => a + b);
 
-    console.log(answer);
   }
   solution("III");
-}
+} 
 
 // 어케푼지 모름 확인 다시 할 것
 function solution(arr1, arr2) {
