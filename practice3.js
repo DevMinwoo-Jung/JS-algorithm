@@ -124,3 +124,26 @@
   }
   solution("III");
 }
+
+// 어케푼지 모름 확인 다시 할 것
+function solution(arr1, arr2) {
+  const rows = arr1.length;
+  const cols = arr1[0].length;
+  
+  // Check if the dimensions of arr1 and arr2 are the same
+  if (arr2.length !== rows || arr2[0].length !== cols) {
+    throw new Error("Both matrices must have the same dimensions.");
+  }
+  
+  // Create a new matrix to store the result of addition
+  const result = new Array(rows).fill().map(() => new Array(cols).fill(0));
+  
+  // Perform matrix addition
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      result[i][j] = arr1[i][j] + arr2[i][j];
+    }
+  }
+  
+  return result;
+}
